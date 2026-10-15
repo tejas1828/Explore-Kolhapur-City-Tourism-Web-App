@@ -1,0 +1,361 @@
+/* ===================================================================
+   KOLHAPUR KULT — Destination Detail Page Stylesheet (mh.css & mh1.css)
+   Clean, responsive, elegant layout for individual landmark pages
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-royal: #8a1414;
+  --primary-accent: #c22929;
+  --gold-accent: #d4a017;
+  --gold-light: #fbe69d;
+  --bg-page: #faf7f2;
+  --bg-card: #1f232c;
+  --text-primary: #1e293b;
+  --text-muted: #64748b;
+  --text-white: #ffffff;
+  --border-gold: rgba(212, 160, 23, 0.3);
+  --shadow-lg: 0 20px 30px rgba(0, 0, 0, 0.25);
+  --radius-xl: 18px;
+  --radius-lg: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-bottom: 60px;
+}
+
+/* ===================================================================
+   NAVIGATION BAR
+   =================================================================== */
+
+.dest-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  background: rgba(15, 17, 21, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-gold);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+.dest-nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: 0.5px;
+}
+
+.dest-nav .brand span {
+  color: var(--gold-accent);
+}
+
+.dest-nav .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: rgba(212, 160, 23, 0.15);
+  border: 1px solid var(--gold-accent);
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.dest-nav .back-link:hover {
+  background: var(--gold-accent);
+  color: #1a1100;
+  transform: translateX(-3px);
+}
+
+/* ===================================================================
+   PAGE HEADER / TITLE
+   =================================================================== */
+
+.heading {
+  text-align: center;
+  padding: 40px 20px 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.heading h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: var(--primary-royal);
+  margin-bottom: 8px;
+  text-shadow: 0 2px 6px rgba(138, 20, 20, 0.15);
+}
+
+.heading-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(138, 20, 20, 0.1);
+  color: var(--primary-royal);
+  border: 1px solid rgba(138, 20, 20, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ===================================================================
+   TOP IMAGE GALLERY (.main .sub)
+   =================================================================== */
+
+.main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.main .sub {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.main .sub img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 2px solid #ffffff;
+  transition: var(--transition);
+}
+
+.main .sub img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 32px rgba(138, 20, 20, 0.2);
+}
+
+/* Backwards compatibility for legacy absolute position animations */
+.main .sub .imgone,
+.main .sub .imgtwo {
+  position: static;
+  animation: none;
+}
+
+/* ===================================================================
+   MAIN CONTENT CARD (.maintwo .part)
+   =================================================================== */
+
+.maintwo {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.maintwo .part {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 0;
+  background: #191c24;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-gold);
+}
+
+.maintwo .partone {
+  background: #111318;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.maintwo .partone img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  transition: var(--transition);
+}
+
+.maintwo .partone img:hover {
+  transform: scale(1.02);
+}
+
+.maintwo .parttwo {
+  padding: 45px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, #1c202a 0%, #151820 100%);
+  color: var(--text-white);
+}
+
+.parttwo h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.parttwo h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold-accent);
+  margin-bottom: 18px;
+  line-height: 1.5;
+  border-left: 3px solid var(--gold-accent);
+  padding-left: 12px;
+}
+
+.parttwo p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.parttwo button,
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: linear-gradient(135deg, var(--gold-accent), #a17407);
+  color: #1a1100;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(212, 160, 23, 0.35);
+  transition: var(--transition);
+  align-self: flex-start;
+  margin-left: 0;
+}
+
+.parttwo button a,
+.map-btn a {
+  color: #1a1100 !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px !important;
+  font-weight: 700;
+}
+
+.parttwo button:hover,
+.map-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(212, 160, 23, 0.55);
+}
+
+/* ===================================================================
+   QUICK EXPLORE FOOTER STRIP
+   =================================================================== */
+
+.explore-more-bar {
+  max-width: 1150px;
+  margin: 30px auto 0;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.explore-more-bar h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--primary-royal);
+  margin-bottom: 14px;
+}
+
+.explore-more-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.explore-more-links a {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #f1f5f9;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 1px solid #e2e8f0;
+}
+
+.explore-more-links a:hover {
+  background: var(--primary-royal);
+  color: #ffffff;
+  border-color: var(--primary-royal);
+  transform: translateY(-2px);
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN
+   =================================================================== */
+
+@media (max-width: 850px) {
+  .main .sub {
+    grid-template-columns: 1fr;
+  }
+  .main .sub img {
+    height: 280px;
+  }
+  .maintwo .part {
+    grid-template-columns: 1fr;
+  }
+  .maintwo .partone {
+    padding: 20px;
+  }
+  .maintwo .parttwo {
+    padding: 30px 24px;
+  }
+  .parttwo button,
+  .map-btn {
+    width: 100%;
+  }
+}
